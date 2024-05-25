@@ -1,29 +1,24 @@
-// Bu ders içeriğinde data ve method kullanımı var.
+// Bu ders içeriğinde koşulların kullanımı var.
 
 
 const app = Vue.createApp({
     template:`
-    <h2>Title: {{title}} </h2>
-    <h3>description: {{description}} </h3>
-    <p>comment:  {{comment}}</p>
-    <button v-on:click="added()">Add</button>
-    <p>{{text}}</p>
+    <div v-if='showInfo'>Deneme Yazisi</div>
+    <div v-show='!showInfo'>Deneme Yazisi 2</div>
+    <button @click="toggle">
+        <span v-if='!showInfo'>Göster</span>
+        <span v-else>Gizle</span>
+    </button>
     `,
     data() {
         return {
-            title: 'Hello VueJS',
-            description: 'Vue course content lesson 3',
-            comment: 0,
-            text: 'Click to add a comment'
+            showInfo:true
         }
     },
-    // Yorum sayılarını yazdıran method.
     methods: {
-        added() {
-            console.log('Added buttons start.')
-            this.comment++;
-            this.text=`${this.comment} one comment entered.`
-        }
+        toggle() {
+            this.showInfo = !this.showInfo;
+     }
     },
 });
 
