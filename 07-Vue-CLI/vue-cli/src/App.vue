@@ -1,15 +1,14 @@
 <template>
-  <h3>{{ title }}</h3>
-
-  <input type="text" ref="name">
-  <br>
-  <br>
-  <br>
-  <input type="text" ref="password">
-  <button @click="login">Giriş</button>
-  <br>
-  <p v-if="isLogin">Giriş başarılı</p>
-  <p v-else>Giriş başarısız</p>
+  <div id="app">
+    <h3>{{ title }}</h3>
+    <input type="text" ref="name" placeholder="Kullanıcı adı">
+    <br><br>
+    <input type="password" ref="password" placeholder="Şifre">
+    <button @click="login">Giriş</button>
+    <br><br>
+    <p v-if="isLogin">Giriş başarılı</p>
+    <p v-else>Giriş başarısız</p>
+  </div>
 </template>
 
 <script>
@@ -34,7 +33,6 @@ export default {
   }
 }
 </script>
-
 
 <style>
 #app {
