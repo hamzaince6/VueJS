@@ -24,7 +24,18 @@ const routes = [
     path: '/contact/:id',
     name: 'contact-info',
     component: () => import(/* webpackChunkName: "contact-info" */ '../views/ContactInfo.vue')
-  }
+  },
+  {
+    //Eksik bir harf girilirse yine aynı yere redirect edilmesi.
+    path: '/contac',
+    redirect: '/contact'
+  },
+  {
+    //404 Not Found Page
+    path: '/:catchAll(.*)',
+    name: 'NotFound',
+    component: () => import(/* webpackChunkName: "contact" */ '../views/NotFound.vue')
+  },
 ]
 
 const router = createRouter({
