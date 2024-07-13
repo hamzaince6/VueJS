@@ -2,7 +2,7 @@
   <section>
     <h1>Contact</h1>
     <div v-for="contact in contacts" :key="contact.id">
-      <p>{{ contact.email }}</p>
+      <router-link :to="`/contact/${contact.id}`">{{ contact.email }}</router-link>
     </div>
   </section>
 </template>
